@@ -102,7 +102,7 @@ def checkIfDSeparated(G, X, Y, Z):
 	in a graph G, when we have conditioned on a set of nodes Z.
 	"""
 	R = findReachableNodes(G, X, Z)
-	return (Y not in R)
+	return (Y not in R) # Y is d-separated from X if it is not reachable from X
 
 def main():
 	"""
@@ -123,7 +123,7 @@ def main():
 	X = args.source - 1
 	Y = args.target - 1
 	Z = [z-1 for z in args.given]
-	print (checkIfDSeparated(G, X, Y, Z))
+	print (str(checkIfDSeparated(G, X, Y, Z)).upper())
 
 
 if __name__=="__main__":
